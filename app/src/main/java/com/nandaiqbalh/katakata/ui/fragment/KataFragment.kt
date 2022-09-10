@@ -7,6 +7,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.nandaiqbalh.katakata.R
 import com.nandaiqbalh.katakata.databinding.FragmentKataBinding
@@ -49,6 +50,9 @@ class KataFragment : Fragment() {
 
         // get data
         val huruf = arguments?.getString("huruf")!!
+
+        // set up toolbar title
+        (activity as AppCompatActivity).supportActionBar?.title = "Words that start with $huruf"
 
         // filter kata
         val kataList = resources.getStringArray(R.array.kata).toList().filter { word -> word.startsWith(huruf) }
