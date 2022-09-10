@@ -4,10 +4,6 @@ import android.content.Context
 import android.os.Bundle
 import android.view.*
 import androidx.fragment.app.Fragment
-import android.widget.Toast
-import androidx.core.content.ContextCompat
-import androidx.fragment.app.commit
-import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.nandaiqbalh.katakata.R
 import com.nandaiqbalh.katakata.databinding.FragmentHurufBinding
