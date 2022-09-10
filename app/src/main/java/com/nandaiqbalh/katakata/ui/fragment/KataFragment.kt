@@ -9,9 +9,13 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.appcompat.app.AppCompatActivity
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 import androidx.navigation.fragment.navArgs
 >>>>>>> dev
+=======
+import androidx.navigation.fragment.navArgs
+>>>>>>> 0e05d40f2b15b6d01d17d2ed6cc4b22ff30eb374
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.nandaiqbalh.katakata.R
 import com.nandaiqbalh.katakata.databinding.FragmentKataBinding
