@@ -1,13 +1,9 @@
 package com.nandaiqbalh.katakata.ui.fragment
 
-import android.content.Context
 import android.os.Bundle
 import android.view.*
 import androidx.fragment.app.Fragment
-import android.widget.Toast
-import androidx.core.content.ContextCompat
-import androidx.fragment.app.commit
-import androidx.recyclerview.widget.GridLayoutManager
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.nandaiqbalh.katakata.R
 import com.nandaiqbalh.katakata.databinding.FragmentHurufBinding
@@ -32,16 +28,6 @@ class HurufFragment : Fragment() {
     private val binding get() = _binding!!
 
     private lateinit var onDataPass: OnDataPass
-
-    override fun onAttach(context: Context) {
-        super.onAttach(context)
-        onDataPass = context as OnDataPass
-    }
-
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        setHasOptionsMenu(true)
-    }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -73,7 +59,8 @@ class HurufFragment : Fragment() {
 
         adapter.setOnItemClickCallback(object : OnItemClickCallback{
             override fun onItemClicked(data: String) {
-                onDataPass.onDataPass(data)
+                val action = HurufFragmentDirections.actionHurufFragmentToKataFragment(data)
+                findNavController().navigate(action)
             }
         })
     }
