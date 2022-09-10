@@ -8,6 +8,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.appcompat.app.AppCompatActivity
+import androidx.navigation.fragment.navArgs
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.nandaiqbalh.katakata.R
 import com.nandaiqbalh.katakata.databinding.FragmentKataBinding
@@ -30,6 +31,8 @@ class KataFragment : Fragment() {
     private var _binding: FragmentKataBinding? = null
     private val binding get() = _binding!!
 
+    private val args: KataFragmentArgs by navArgs()
+
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -49,7 +52,10 @@ class KataFragment : Fragment() {
     private fun setUpAdapter(){
 
         // get data
-        val huruf = arguments?.getString("huruf")!!
+        val huruf = args.huruf
+
+        // set up title
+        (activity as AppCompatActivity).supportActionBar?.title = "Words that start with $huruf"
 
         // set up toolbar title
         (activity as AppCompatActivity).supportActionBar?.title = "Words that start with $huruf"
