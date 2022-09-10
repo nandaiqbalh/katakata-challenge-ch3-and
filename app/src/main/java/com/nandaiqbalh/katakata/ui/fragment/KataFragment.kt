@@ -57,6 +57,9 @@ class KataFragment : Fragment() {
         // set up title
         (activity as AppCompatActivity).supportActionBar?.title = "Words that start with $huruf"
 
+        // set up toolbar title
+        (activity as AppCompatActivity).supportActionBar?.title = "Words that start with $huruf"
+
         // filter kata
         val kataList = resources.getStringArray(R.array.kata).toList().filter { word -> word.startsWith(huruf) }
 
